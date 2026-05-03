@@ -1,15 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.lks_parking_paularecaj">
+
+    <!-- Permisos -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".ParkingApplication"
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LKS_Parking_PaulaRecaj" />
+        android:theme="@style/Theme.ParkingEmpresarial"
+        android:usesCleartextTraffic="false">
+
+        <!-- Login Activity (LAUNCHER) -->
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Register Activity -->
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Forgot Password Activity -->
+        <activity
+            android:name=".ui.auth.ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Dashboard Activity -->
+        <activity
+            android:name=".ui.dashboard.DashboardActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- New Reservation Activity -->
+        <activity
+            android:name=".ui.reservation.NewReservationActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- My Reservations Activity -->
+        <activity
+            android:name=".ui.reservation.MyReservationsActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Edit Reservation Activity -->
+        <activity
+            android:name=".ui.reservation.EditReservationActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Notification Receiver -->
+        <receiver
+            android:name=".notification.NotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
 
 </manifest>

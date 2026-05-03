@@ -5,13 +5,17 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lks_parking_paularecaj.ParkingApplication
 import com.example.lks_parking_paularecaj.databinding.ActivityLoginBinding
+import com.example.lks_parking_paularecaj.ui.ViewModelFactory
 import com.example.lks_parking_paularecaj.ui.dashboard.DashboardActivity
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: AuthViewModel by viewModels {
+        ViewModelFactory(authRepository = (application as ParkingApplication).authRepository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        viewModel.error.observe(this) { error ->
+        viewModel.loginError.observe(this) { error ->
             error?.let {
                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
