@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Parking Empresarial</string>
+
+    <!-- Login -->
+    <string name="login_title">Inicia sesión para continuar</string>
+    <string name="email_hint">tu@email.com</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="no_account">¿No tienes cuenta?</string>
+    <string name="register_here">Regístrate aquí</string>
+
+    <!-- Dashboard -->
+    <string name="welcome_user">Bienvenido, %s</string>
+    <string name="new_reservation">Nueva Reserva</string>
+    <string name="my_reservations">Mis Reservas</string>
+    <string name="upcoming_reservations">Próximas Reservas</string>
+    <string name="no_upcoming_reservations">No tienes reservas próximas</string>
+    <string name="notifications_info">Recibirás avisos 30 min antes del inicio y 15 min antes del fin de tus reservas</string>
+
+    <!-- Reservations -->
+    <string name="date_label">Fecha</string>
+    <string name="time_label">Horario</string>
+    <string name="start_time">Inicio</string>
+    <string name="end_time">Fin</string>
+    <string name="parking_type">Tipo de Plaza</string>
+    <string name="select_spot">Selecciona tu Plaza</string>
+    <string name="confirm_reservation">Confirmar Reserva</string>
+    <string name="save_changes">Guardar Cambios</string>
+    <string name="edit">Editar</string>
+    <string name="cancel">Cancelar</string>
+
+    <!-- Parking Types -->
+    <string name="parking_normal">Normal</string>
+    <string name="parking_electric">Cargador Eléctrico</string>
+    <string name="parking_motorcycle">Moto</string>
+
+    <!-- Validations -->
+    <string name="error_select_type">Por favor selecciona un tipo de plaza</string>
+    <string name="error_select_spot">Por favor selecciona una plaza</string>
+    <string name="error_max_7_days">La reserva debe ser dentro de los próximos 7 días</string>
+    <string name="error_max_9_hours">La reserva no puede ser mayor a 9 horas</string>
+    <string name="max_7_days_hint">Máximo 7 días de anticipación</string>
+    <string name="max_9_hours_hint">Duración máxima: 9 horas</string>
+
+    <!-- Success Messages -->
+    <string name="reservation_created">Reserva creada exitosamente</string>
+    <string name="reservation_updated">Reserva actualizada exitosamente</string>
+    <string name="reservation_cancelled">Reserva cancelada exitosamente</string>
+    <string name="confirm_cancel">¿Estás seguro de que deseas cancelar esta reserva?</string>
+
+    <!-- Notifications -->
+    <string name="notification_start_title">Tu reserva comienza pronto</string>
+    <string name="notification_start_message">Tu reserva en la plaza %s comienza en 30 minutos</string>
+    <string name="notification_end_title">Tu reserva finaliza pronto</string>
+    <string name="notification_end_message">Tu reserva en la plaza %s finaliza en 15 minutos</string>
+</resources>
