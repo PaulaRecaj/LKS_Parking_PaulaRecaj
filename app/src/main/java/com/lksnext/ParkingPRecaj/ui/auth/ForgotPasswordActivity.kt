@@ -40,10 +40,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
             // Solicitar recuperación
             viewModel.forgotPassword(email)
         }
-
-        binding.tvBackToLogin.setOnClickListener {
-            finish()
-        }
     }
 
     private fun observeViewModel() {

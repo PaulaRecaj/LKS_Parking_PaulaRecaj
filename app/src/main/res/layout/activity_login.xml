@@ -59,8 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Correo electrónico"
-                app:startIconDrawable="@drawable/ic_plus"> <!-- ic_email-->
+                android:hint="Correo electrónico">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
@@ -77,8 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:hint="Contraseña"
-                app:startIconDrawable="@drawable/ic_plus"
-                app:endIconMode="password_toggle"> <!-- ic_lock-->
+                app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
