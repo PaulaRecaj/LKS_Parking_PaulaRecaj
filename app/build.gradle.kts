@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.lks_parking_paularecaj"
+    namespace = "com.lksnext.ParkingPRecaj"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.lks_parking_paularecaj"
+        applicationId = "com.lksnext.ParkingPRecaj"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

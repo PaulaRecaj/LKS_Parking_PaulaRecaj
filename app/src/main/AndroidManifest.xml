@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lks_parking_paularecaj">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Permisos -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,7 +9,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".ParkingApplication"
+        android:name="com.lksnext.ParkingPRecaj.ParkingApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,7 +20,7 @@
 
         <!-- Login Activity (LAUNCHER) -->
         <activity
-            android:name=".ui.auth.LoginActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.auth.LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -32,37 +31,37 @@
 
         <!-- Register Activity -->
         <activity
-            android:name=".ui.auth.RegisterActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.auth.RegisterActivity"
             android:screenOrientation="portrait" />
 
         <!-- Forgot Password Activity -->
         <activity
-            android:name=".ui.auth.ForgotPasswordActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.auth.ForgotPasswordActivity"
             android:screenOrientation="portrait" />
 
         <!-- Dashboard Activity -->
         <activity
-            android:name=".ui.dashboard.DashboardActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.dashboard.DashboardActivity"
             android:screenOrientation="portrait" />
 
         <!-- New Reservation Activity -->
         <activity
-            android:name=".ui.reservation.NewReservationActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.reservation.NewReservationActivity"
             android:screenOrientation="portrait" />
 
         <!-- My Reservations Activity -->
         <activity
-            android:name=".ui.reservation.MyReservationsActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.reservation.MyReservationsActivity"
             android:screenOrientation="portrait" />
 
         <!-- Edit Reservation Activity -->
         <activity
-            android:name=".ui.reservation.EditReservationActivity"
+            android:name="com.lksnext.ParkingPRecaj.ui.reservation.EditReservationActivity"
             android:screenOrientation="portrait" />
 
         <!-- Notification Receiver -->
         <receiver
-            android:name=".notification.NotificationReceiver"
+            android:name="com.lksnext.ParkingPRecaj.notification.NotificationReceiver"
             android:enabled="true"
             android:exported="false" />
 
