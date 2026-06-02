@@ -80,18 +80,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="12dp">
 
                         <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:src="@drawable/ic_calendar"
                             app:tint="@color/primary_orange" />
 
@@ -99,8 +99,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:text="Fecha"
-                            android:textSize="14sp"
+                            android:text="Selecciona el día"
+                            android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_primary" />
 
@@ -109,23 +109,29 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        app:startIconDrawable="@drawable/ic_calendar"
+                        app:startIconTint="@color/primary_orange">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/etDate"
                             android:layout_width="match_parent"
-                            android:layout_height="44dp"
+                            android:layout_height="wrap_content"
                             android:focusable="false"
                             android:clickable="true"
-                            android:inputType="none" />
+                            android:inputType="none"
+                            android:paddingVertical="16dp"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_primary"
+                            android:textStyle="bold" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Máximo 7 días de anticipación"
+                        android:layout_marginTop="6dp"
+                        android:text="* Máximo 7 días de anticipación"
                         android:textSize="12sp"
                         android:textColor="@color/text_secondary" />
 
@@ -145,18 +151,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="12dp">
 
                         <ImageView
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
                             android:src="@drawable/ic_clock"
                             app:tint="@color/primary_orange" />
 
@@ -164,8 +170,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:text="Horario"
-                            android:textSize="14sp"
+                            android:text="Horario de reserva"
+                            android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_primary" />
 
@@ -184,26 +190,25 @@
                             android:orientation="vertical"
                             android:layout_marginEnd="6dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Inicio"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="4dp" />
-
                             <com.google.android.material.textfield.TextInputLayout
                                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:hint="Desde"
+                                app:startIconDrawable="@drawable/ic_clock"
+                                app:startIconTint="@color/primary_orange">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/etStartTime"
                                     android:layout_width="match_parent"
-                                    android:layout_height="44dp"
+                                    android:layout_height="wrap_content"
                                     android:focusable="false"
                                     android:clickable="true"
-                                    android:inputType="none" />
+                                    android:inputType="none"
+                                    android:paddingVertical="16dp"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_primary"
+                                    android:textStyle="bold" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -216,26 +221,25 @@
                             android:orientation="vertical"
                             android:layout_marginStart="6dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Fin"
-                                android:textSize="12sp"
-                                android:textColor="@color/text_secondary"
-                                android:layout_marginBottom="4dp" />
-
                             <com.google.android.material.textfield.TextInputLayout
                                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:hint="Hasta"
+                                app:startIconDrawable="@drawable/ic_clock"
+                                app:startIconTint="@color/primary_orange">
 
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/etEndTime"
                                     android:layout_width="match_parent"
-                                    android:layout_height="44dp"
+                                    android:layout_height="wrap_content"
                                     android:focusable="false"
                                     android:clickable="true"
-                                    android:inputType="none" />
+                                    android:inputType="none"
+                                    android:paddingVertical="16dp"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/text_primary"
+                                    android:textStyle="bold" />
 
                             </com.google.android.material.textfield.TextInputLayout>
 
@@ -246,8 +250,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Duración máxima: 9 horas"
+                        android:layout_marginTop="6dp"
+                        android:text="* La reserva no puede superar las 8 horas"
                         android:textSize="12sp"
                         android:textColor="@color/text_secondary" />
 
@@ -267,14 +271,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:text="Tipo de Plaza"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary" />
 
@@ -330,14 +334,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="12dp">
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="12dp"
                         android:text="Selecciona tu Plaza"
-                        android:textSize="14sp"
+                        android:textSize="15sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary" />
 
@@ -356,9 +360,11 @@
                 android:id="@+id/btnConfirm"
                 style="@style/Widget.App.Button.Primary"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="64dp"
                 android:layout_marginTop="8dp"
-                android:text="Confirmar Reserva" />
+                android:text="Confirmar Reserva"
+                android:textSize="16sp"
+                app:cornerRadius="16dp" />
 
         </LinearLayout>
 

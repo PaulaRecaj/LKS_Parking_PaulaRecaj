@@ -40,7 +40,6 @@ class ReservationViewModel(
         viewModelScope.launch {
             _loading.value = true
             try {
-                // En un caso real, obtendríamos las próximas y las pasadas
                 val reservations = reservationRepository.getUpcomingReservations()
                 _myReservations.value = reservations
                 _error.value = null
@@ -53,10 +52,19 @@ class ReservationViewModel(
     }
 
     fun loadAvailableSpots(type: ParkingType, date: Long, startTime: String, endTime: String) {
+        if (startTime.isEmpty() || endTime.isEmpty()) return
+        
         viewModelScope.launch {
             _loading.value = true
             try {
-                // En producción, consultar backend para spots disponibles
+                if (!validateDuration(startTime, endTime)) {
+                    _error.value = "La reserva no puede ser mayor a 8 horas"
+                    _availableSpots.value = emptyList()
+                    return@launch
+                }
+                
+                // En producción, consultar backend para spots disponibles filtrando por fecha y hora
+                // para evitar solapamientos. Por ahora simulamos con los spots del tipo.
                 val spots = ParkingSpots.getSpotsByType(type)
                 _availableSpots.value = spots
                 _error.value = null
@@ -86,7 +94,13 @@ class ReservationViewModel(
                 }
 
                 if (!validateDuration(startTime, endTime)) {
-                    _error.value = "La reserva no puede ser mayor a 9 horas"
+                    _error.value = "La reserva no puede ser mayor a 8 horas"
+                    _loading.value = false
+                    return@launch
+                }
+
+                if (spotNumber.isEmpty()) {
+                    _error.value = "Debes seleccionar una plaza"
                     _loading.value = false
                     return@launch
                 }
@@ -174,8 +188,14 @@ class ReservationViewModel(
         val startMinutes = startHour * 60 + startMinute
         val endMinutes = endHour * 60 + endMinute
 
-        val durationMinutes = endMinutes - startMinutes
-        val maxMinutes = 9 * 60 // 9 horas
+        var durationMinutes = endMinutes - startMinutes
+        
+        // Si la hora de fin es menor que la de inicio, asumimos que es el día siguiente (pero la regla dice máximo 8 horas, así que probablemente no pase de medianoche mucho)
+        if (durationMinutes <= 0) {
+            durationMinutes += 24 * 60
+        }
+
+        val maxMinutes = 8 * 60 // 8 horas
 
         return durationMinutes > 0 && durationMinutes <= maxMinutes
     }
