@@ -26,7 +26,7 @@ class NewReservationActivity : AppCompatActivity() {
     }
 
     private lateinit var spotAdapter: SpotAdapter
-    private var selectedDate: Long = System.currentTimeMillis()
+    private var selectedDate: Long = MaterialDatePicker.todayInUtcMilliseconds()
     
     private val dateFormatDisplay = SimpleDateFormat("EEEE, d 'de' MMMM", Locale("es", "ES"))
 
@@ -145,8 +145,11 @@ class NewReservationActivity : AppCompatActivity() {
     private fun observeViewModel() {
         viewModel.availableSpots.observe(this) { spots -> spotAdapter.updateSpots(spots) }
 
-        viewModel.reservationCreated.observe(this) { success ->
-            if (success) {
+        viewModel.reservationCreated.observe(this) { reservation ->
+            if (reservation != null) {
+                // Programar notificaciones para la nueva reserva
+                com.lksnext.ParkingPRecaj.notification.NotificationScheduler.scheduleReservationNotifications(this, reservation)
+
                 Toast.makeText(this, "Reserva confirmada con éxito", Toast.LENGTH_LONG).show()
                 finish()
             }

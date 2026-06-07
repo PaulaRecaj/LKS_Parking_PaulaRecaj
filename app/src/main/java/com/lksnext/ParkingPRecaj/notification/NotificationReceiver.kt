@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.lksnext.ParkingPRecaj.R
 import com.lksnext.ParkingPRecaj.ui.dashboard.DashboardActivity
@@ -16,6 +17,7 @@ class NotificationReceiver : BroadcastReceiver() {
         val title = intent.getStringExtra("title") ?: ""
         val message = intent.getStringExtra("message") ?: ""
 
+        Log.d("NotificationReceiver", "Received notification broadcast: $title - $message")
         showNotification(context, notificationId, title, message)
     }
 

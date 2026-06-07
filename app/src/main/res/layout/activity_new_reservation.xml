@@ -251,7 +251,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text="* La reserva no puede superar las 8 horas"
+                        android:text="@string/max_9_hours_hint"
                         android:textSize="12sp"
                         android:textColor="@color/text_secondary" />
 
@@ -296,6 +296,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Normal"
+                            android:checked="true"
                             app:chipIcon="@drawable/ic_car" />
 
                         <com.google.android.material.chip.Chip
